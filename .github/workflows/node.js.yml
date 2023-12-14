@@ -20,4 +20,4 @@ jobs:
     
 
     - name: Run React.js
-      run: node React.js
+      run: React.js
