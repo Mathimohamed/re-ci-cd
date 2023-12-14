@@ -1,23 +1,27 @@
-name: Run React.js
+name: Build and Deploy
 
-on: 
+on:
   push:
     branches:
       - main
 
 jobs:
-  run-app:
+  build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-     
-   
-      
-        
 
-    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14
 
-    - name: Run React.js
-      run: React.js
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build React app
+      run: npm run build
+
+    # Add deployment steps if applicable
